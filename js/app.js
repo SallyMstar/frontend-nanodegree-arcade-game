@@ -1,12 +1,7 @@
 // Enemies our player must avoid
-var Enemy = function() {
-    // Variables applied to each of our instances go here,
-    // we've provided one for you to get started
-
-    // The image/sprite for our enemies, this uses
-    // a helper we've provided to easily load images
-    this.sprite = 'images/mouseRun.png';
-    this.x = -50;
+var Enemy = function(pic) {
+    this.sprite = 'images/enemy1.png';
+    this.x = -100;
     this.y = (Math.floor(Math.random()*400)+70);
 };
 
@@ -20,7 +15,7 @@ Enemy.prototype.render = function() {
 Enemy.prototype.update = function(dt) {
      this.x += (Math.floor(Math.random()*10));
      if(this.x >500) {
-          this.x = -50;
+          this.x = -100;
           this.y = (Math.floor(Math.random()*400)+70);
      }
     // You should multiply any movement by the dt parameter
@@ -28,34 +23,60 @@ Enemy.prototype.update = function(dt) {
     // all computers.
 };
 
+const Prize = function() {
+     this.sprite = 'images/Key.png';
+     this.x = 70;
+     this.y = 70;
+};
+
+// Draw the enemy on the screen, required method for game
+Prize.prototype.render = function() {
+     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+};
+
+Prize.prototype.update = function(dt) {
+};
 // Now write your own player class
 // This class requires an update(), render() and
 // a handleInput() method.
 const Player = function() {
-     this.sprite = 'images/cartoonElephantDance.png';
-     this.x = 200;
-     this.y = 425;
+     this.sprite = 'images/mouseRun.png';
+     this.x = 210;
+     this.y = 510;
 };
 
-Player.prototype.update = function(dt) {};
+Player.prototype.update = function(dt) {;
+     }
 Player.prototype.render = function() {
      ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 Player.prototype.handleInput = function(dt) {
-
+     switch (dt) {
+          case "up":
+               this.y -= 25;
+               break;
+          case "left":
+               this.x -= 25;
+               break;
+          case "right":
+               this.x += 25;
+               break;
+          case "down":
+               this.y += 25;
+               break;
+     }
+     console.log(this.x+", "+this.y);
 };
 
 
 
 // Now instantiate your objects.
-let enemy1 = new Enemy();
-let enemy2 = new Enemy();
-let enemy3 = new Enemy();
-let enemy4 = new Enemy();
-let enemy5 = new Enemy();
-let enemy6 = new Enemy();
-let enemy7 = new Enemy();
-let enemy8 = new Enemy();
+let enemy1 = new Enemy(1);
+let enemy2 = new Enemy(2);
+let enemy3 = new Enemy(3);
+let enemy4 = new Enemy(4);
+let enemy5 = new Enemy(5);
+let prize = new Prize();
 
 // Place all enemy objects in an array called allEnemies
 const allEnemies = [];
@@ -63,23 +84,14 @@ const allEnemies = [];
 setTimeout(function() {
      allEnemies.push(enemy2);
 }, 2000);
-// setTimeout(function() {
-//      allEnemies.push(enemy3);
-// }, 4000);
+setTimeout(function() {
+     allEnemies.push(enemy3);
+}, 6000);
 setTimeout(function() {
      allEnemies.push(enemy4);
-}, 6000);
-// setTimeout(function() {
-//      allEnemies.push(enemy5);
-// }, 8000);
-setTimeout(function() {
-     allEnemies.push(enemy6);
 }, 10000);
-// setTimeout(function() {
-//      allEnemies.push(enemy7)
-// }, 12000);
 setTimeout(function() {
-     allEnemies.push(enemy8);
+     allEnemies.push(enemy5);
 }, 14000);
 
 // Place the player object in a variable called player
