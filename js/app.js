@@ -13,7 +13,7 @@ Enemy.prototype.render = function() {
 // Update the enemy's position, required method for game
 // Parameter: dt, a time delta between ticks
 Enemy.prototype.update = function(dt) {
-     this.x += (Math.floor(Math.random()*10));
+     this.x += (Math.floor(Math.random()*10)*dt);
      if(this.x >500) {
           this.x = -100;
           this.y = (Math.floor(Math.random()*400)+70);
