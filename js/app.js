@@ -13,7 +13,7 @@ Enemy.prototype.render = function() {
 // Update the enemy's position, required method for game
 // Parameter: dt, a time delta between ticks
 Enemy.prototype.update = function(dt) {
-     this.x += (Math.floor(Math.random()*10)*dt);
+     this.x += ((Math.random()*100)*dt);
      if(this.x >500) {
           this.x = -100;
           this.y = (Math.floor(Math.random()*400)+70);
@@ -53,16 +53,32 @@ Player.prototype.render = function() {
 Player.prototype.handleInput = function(dt) {
      switch (dt) {
           case "up":
-               this.y -= 25;
+               if(this.y > 25) {
+                    this.y -= 25;
+               } else {
+                    this.y = 0;
+               }
                break;
           case "left":
-               this.x -= 25;
+               if(this.x > 25) {
+                    this.x -= 25;
+               } else {
+                    this.x = 0;
+               }
                break;
           case "right":
-               this.x += 25;
+               if(this.x < 420) {
+                    this.x += 25;
+               } else {
+                    this.x = 445;
+               }
                break;
           case "down":
+          if(this.y <= 480) {
                this.y += 25;
+          } else {
+               this.y = 510;
+          }
                break;
      }
      console.log(this.x+", "+this.y);
