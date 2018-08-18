@@ -1,5 +1,5 @@
 // Enemies our player must avoid
-var Enemy = function(pic) {
+const Enemy = function(pic) {
     this.sprite = 'images/enemy1.png';
     this.x = -100;
     this.y = (Math.floor(Math.random()*400)+70);
@@ -13,7 +13,7 @@ Enemy.prototype.render = function() {
 // Update the enemy's position, required method for game
 // Parameter: dt, a time delta between ticks
 Enemy.prototype.update = function(dt) {
-     this.x += ((Math.random()*100)*dt);
+     this.x += (Math.random()*100)*dt;
      if(this.x >500) {
           this.x = -100;
           this.y = (Math.floor(Math.random()*400)+70);
@@ -21,21 +21,19 @@ Enemy.prototype.update = function(dt) {
     // You should multiply any movement by the dt parameter
     // which will ensure the game runs at the same speed for
     // all computers.
+     if((Math.abs((this.x + 50) - player.x) < 30) && (Math.abs((this.y + 40) - player.y) < 30)) {
+          alert("Awww, you lost, but you were a YUMMY Snack! Try again!");
+          player.y = 510;
+          player.x = 210;
+     };
+     if(player.y <= 50) {
+          alert("You made it!!  Great Job! Play again :)");
+          player.y = 510;
+          player.x = 210;
+     };
 };
 
-const Prize = function() {
-     this.sprite = 'images/Key.png';
-     this.x = 70;
-     this.y = 70;
-};
 
-// Draw the enemy on the screen, required method for game
-Prize.prototype.render = function() {
-     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
-};
-
-Prize.prototype.update = function(dt) {
-};
 // Now write your own player class
 // This class requires an update(), render() and
 // a handleInput() method.
@@ -92,7 +90,6 @@ let enemy2 = new Enemy(2);
 let enemy3 = new Enemy(3);
 let enemy4 = new Enemy(4);
 let enemy5 = new Enemy(5);
-let prize = new Prize();
 
 // Place all enemy objects in an array called allEnemies
 const allEnemies = [];
@@ -112,8 +109,6 @@ setTimeout(function() {
 
 // Place the player object in a variable called player
 let player = new Player();
-
-
 
 
 // This listens for key presses and sends the keys to your
