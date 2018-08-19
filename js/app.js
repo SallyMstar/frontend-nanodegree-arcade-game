@@ -10,6 +10,28 @@ Enemy.prototype.render = function() {
      ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
+function createEnemies() {
+     let enemy1 = new Enemy(1);
+     let enemy2 = new Enemy(2);
+     let enemy3 = new Enemy(3);
+     let enemy4 = new Enemy(4);
+     let enemy5 = new Enemy(5);
+
+     // Place all enemy objects in an array called allEnemies
+     allEnemies.push(enemy1);
+     setTimeout(function() {
+          allEnemies.push(enemy2);
+     }, 2000);
+     setTimeout(function() {
+          allEnemies.push(enemy3);
+     }, 6000);
+     setTimeout(function() {
+          allEnemies.push(enemy4);
+     }, 10000);
+     setTimeout(function() {
+          allEnemies.push(enemy5);
+     }, 14000);
+};
 // Update the enemy's position, required method for game
 // Parameter: dt, a time delta between ticks
 Enemy.prototype.update = function(dt) {
@@ -21,16 +43,6 @@ Enemy.prototype.update = function(dt) {
     // You should multiply any movement by the dt parameter
     // which will ensure the game runs at the same speed for
     // all computers.
-     if((Math.abs((this.x + 50) - player.x) < 30) && (Math.abs((this.y + 40) - player.y) < 30)) {
-          alert("Awww, you lost, but you were a YUMMY Snack! Try again!");
-          player.y = 510;
-          player.x = 210;
-     };
-     if(player.y <= 50) {
-          alert("You made it!!  Great Job! Play again :)");
-          player.y = 510;
-          player.x = 210;
-     };
 };
 
 
@@ -44,7 +56,36 @@ const Player = function() {
 };
 
 Player.prototype.update = function(dt) {;
-     }
+     if(player.y <= 50) {
+          alert("You made it!!  Great Job! Play again :)");
+          allEnemies.length = 0;
+          player.y = 510;
+          player.x = 210;
+          createEnemies();
+     };
+     for(let enemy of allEnemies) {
+          if((player.x >= (enemy.x - 31)) && (player.x <= (enemy.x + 125)) &&
+          (player.y >= (enemy.y -50)) && (player.y <= (enemy.y + 120))) {
+               if(player.x < (enemy.x + 25)) {
+               enemy.sprite = "images/catAttackReverse.png";
+          } else {
+               enemy.sprite = "images/catAttack.png";
+          }
+               enemy.y -= 50;
+
+               setTimeout(function() {
+                    alert("Awww, you lost, but you were a YUMMY Snack! Try again!");
+                    allEnemies.length = 0;
+                    player.y = 510;
+                    player.x = 210;
+                    createEnemies();
+          }, 0);
+     };
+     };
+};
+
+
+
 Player.prototype.render = function() {
      ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
@@ -80,33 +121,16 @@ Player.prototype.handleInput = function(dt) {
                break;
      }
      console.log(this.x+", "+this.y);
+     for(let enemy of allEnemies) {
+     console.log(enemy.x+", "+enemy.y);
+};
 };
 
 
 
 // Now instantiate your objects.
-let enemy1 = new Enemy(1);
-let enemy2 = new Enemy(2);
-let enemy3 = new Enemy(3);
-let enemy4 = new Enemy(4);
-let enemy5 = new Enemy(5);
-
-// Place all enemy objects in an array called allEnemies
 const allEnemies = [];
-     allEnemies.push(enemy1);
-setTimeout(function() {
-     allEnemies.push(enemy2);
-}, 2000);
-setTimeout(function() {
-     allEnemies.push(enemy3);
-}, 6000);
-setTimeout(function() {
-     allEnemies.push(enemy4);
-}, 10000);
-setTimeout(function() {
-     allEnemies.push(enemy5);
-}, 14000);
-
+createEnemies();
 // Place the player object in a variable called player
 let player = new Player();
 
