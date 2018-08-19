@@ -24,4 +24,4 @@ $ google-chrome index.html&
 
 <h2>How to play:</h2>
      Use the arrow keys to control your character.  You can go up, down, left, and right, but if you run into a cat, you'll be kitty kibble!<br>
-     <strong>Caution:</strong><em>The longer you play, the more enemies will come looking for you!</em>
+     <em><strong>Caution:</strong>The longer you play, the more enemies will come looking for you!</em>
