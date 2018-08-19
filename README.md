@@ -6,7 +6,7 @@ as an illustration of Object-Oriented Programming, and JavaScript functionality.
 <h2>Installation:</h2>
 To Clone or Download the project, please visit `https://github.com/SallyMstar/jaywalker.git`
 or you may play it directly online at
-<a href "https://cdn.rawgit.com/SallyMstar/jaywalker/wip/index.html" this link.>
+https://cdn.rawgit.com/SallyMstar/jaywalker/wip/index.html>
 
 <h2>The mission:</h2>
      You are our hero mouse!  It's your job to scramble across the open field and stone path to make it to the safety of the water.  The cats want to eat you, but they won't go into the water!
