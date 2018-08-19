@@ -1,4 +1,4 @@
-<h1>Classic Arcade Game Clone
+<h1>Jaywalker -- Classic Arcade Game Clone
 </h1>
 
 This clone of the classic arcade game, Frogger, was created
@@ -8,6 +8,7 @@ as an illustration of Object-Oriented Programming, and JavaScript functionality.
 To Clone or Download the project:
 </strong>
 Please visit https://github.com/SallyMstar/jaywalker.git
+or [$ git clone https://github.com/SallyMstar/jaywalker.git]
 
 <h2><strong>
 The mission:
