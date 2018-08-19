@@ -6,12 +6,16 @@ as an illustration of Object-Oriented Programming, and JavaScript functionality.
 <h2>Installation:</h2>
 To Clone or Download the project, please visit my repo on GitHub at (https://github.com/SallyMstar/jaywalker.git)
 <br>or you may play it directly online at https://cdn.rawgit.com/SallyMstar/jaywalker/wip/index.html
-<br>or if you prefer to run it locally on your own computer with Google chrome,
+<br>or if you prefer to run it locally on your own computer with Google chrome,<br>
 <code>
-     <br>$ git clone https://github.com/SallyMstar/jaywalker.git
-     <br>$ cd jaywalker
-     <br>$ google-chrome index.html&
-</code>
+$ git clone https://github.com/SallyMstar/jaywalker.git
+</code><br>
+<code>
+$ cd jaywalker
+</code><br>
+<code>
+$ google-chrome index.html&
+</code><br>
 
 <h2>The mission:</h2>
      You are our hero mouse!  It's your job to scramble across the open field and stone path to make it to the safety of the water.  The cats want to eat you, but they won't go into the water!
