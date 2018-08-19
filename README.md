@@ -1,9 +1,9 @@
-#Jaywalker -- Classic Arcade Game Clone
+<h1>Jaywalker -- Classic Arcade Game Clone</h1>
 
 This clone of the classic arcade game, Frogger, was created
 as an illustration of Object-Oriented Programming, and JavaScript functionality.
 
-##Installation:
+##Installation:##
 To Clone or Download the project, please visit `https://github.com/SallyMstar/jaywalker.git`
 or you may play it directly online at
 <a href "https://cdn.rawgit.com/SallyMstar/jaywalker/wip/index.html" this link.>
