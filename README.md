@@ -4,12 +4,14 @@ This clone of the classic arcade game, Frogger, was created
 as an illustration of Object-Oriented Programming, and JavaScript functionality.
 
 <h2>Installation:</h2>
-To Clone or Download the project, please visit [my repo on GitHub] (https://github.com/SallyMstar/jaywalker.git)
-<p>or you may play it directly online at [this link] (https://cdn.rawgit.com/SallyMstar/jaywalker/wip/index.html)</p>
-or if you prefer to run it locally on your own computer with Google chrome,
->$ git clone https://github.com/SallyMstar/jaywalker.git</p>
->$ cd jaywalker
->$ google-chrome index.html&
+To Clone or Download the project, please visit my repo on GitHub at (https://github.com/SallyMstar/jaywalker.git)
+<br>or you may play it directly online at https://cdn.rawgit.com/SallyMstar/jaywalker/wip/index.html
+<br>or if you prefer to run it locally on your own computer with Google chrome,
+<code>
+     <br>$ git clone https://github.com/SallyMstar/jaywalker.git
+     <br>$ cd jaywalker
+     <br>$ google-chrome index.html&
+</code>
 
 <h2>The mission:</h2>
      You are our hero mouse!  It's your job to scramble across the open field and stone path to make it to the safety of the water.  The cats want to eat you, but they won't go into the water!
